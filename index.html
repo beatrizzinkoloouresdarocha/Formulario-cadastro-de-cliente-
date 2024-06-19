@@ -16,13 +16,13 @@
                 <img src="imagem/undraw_shopping_re_3wst (1).svg" alt="Imagem ilustrativa de compras">
             </div>
             <div class="form">
-                <form action="#">
+                <form action="#" method="POST">
                     <div class="form-header">
                         <div class="title">
                             <h1>Cadastre-se</h1>
                         </div>
                         <div class="login-button">
-                            <a href="#"><button type="button">Entrar</button></a>
+                            <a href="#">Entrar</a>
                         </div>
                     </div>
                     <div class="input-group">
@@ -47,15 +47,15 @@
                             <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Gênero</label>
+                    <fieldset class="form-group">
+                        <legend>Gênero</legend>
                         <div class="radio-group">
-                            <label><input type="radio" name="gender" value="masculino"> Masculino</label>
-                            <label><input type="radio" name="gender" value="feminino"> Feminino</label>
-                            <label><input type="radio" name="gender" value="outro"> Outro</label>
-                            <label><input type="radio" name="gender" value="prefer-nao-dizer"> Prefiro não dizer</label>
+                            <label for="gender-masculino"><input type="radio" id="gender-masculino" name="gender" value="masculino"> Masculino</label>
+                            <label for="gender-feminino"><input type="radio" id="gender-feminino" name="gender" value="feminino"> Feminino</label>
+                            <label for="gender-outro"><input type="radio" id="gender-outro" name="gender" value="outro"> Outro</label>
+                            <label for="gender-prefer-nao-dizer"><input type="radio" id="gender-prefer-nao-dizer" name="gender" value="prefer-nao-dizer"> Prefiro não dizer</label>
                         </div>
-                    </div>
+                    </fieldset>
                     <button type="submit">Continuar</button>
                 </form>
             </div>
