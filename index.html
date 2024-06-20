@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +12,7 @@
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="imagem/undraw_shopping_re_3wst (1).svg" alt="">
+            <img src="imagem/undraw_shopping_re_3wst (1).svg" alt="Ilustração de uma pessoa fazendo compras">
         </div>
         <div class="form">
             <form action="#">
@@ -22,7 +21,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <a href="#" class="button">Entrar</a>
                     </div>
                 </div>
 
@@ -36,6 +35,7 @@
                         <label for="lastname">Sobrenome</label>
                         <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
                     </div>
+                    
                     <div class="input-box">
                         <label for="email">E-mail</label>
                         <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
@@ -43,7 +43,7 @@
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required pattern="\(\d{2}\) \d{4,5}-\d{4}">
                     </div>
 
                     <div class="input-box">
@@ -51,12 +51,10 @@
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-
                     <div class="input-box">
                         <label for="confirmPassword">Confirme sua Senha</label>
                         <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
                     </div>
-
                 </div>
 
                 <div class="gender-inputs">
@@ -88,7 +86,8 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
+                    <!-- Remover o link dentro do botão -->
+                    <button type="submit">Continuar</button>
                 </div>
             </form>
         </div>
