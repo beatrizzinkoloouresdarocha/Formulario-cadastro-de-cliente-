@@ -36,3 +36,12 @@ body {
     background-color: #fff;
     padding: 3rem;
 }
+
+.form-header{
+    .form-header {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
