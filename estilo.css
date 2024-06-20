@@ -14,3 +14,16 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a7a5a1d7;
+    padding: 1rem;
+}
+
+.form-image img {
+    width: 31rem;
+}
+
