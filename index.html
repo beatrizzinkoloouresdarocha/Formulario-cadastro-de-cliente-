@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <title>Formulário</title>
+    <!-- EmailJS script -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('sua-chave-de-usuario'); // Substitua com sua chave de usuário do EmailJS
+        })();
+    </script>
 </head>
 
 <body>
@@ -16,13 +22,13 @@
             <img src="imagem/undraw_shopping_re_3wst (1).svg" alt="">
         </div>
         <div class="form">
-            <form action="#">
+            <form id="signupForm">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <button type="button"><a href="#">Entrar</a></button>
                     </div>
                 </div>
 
@@ -51,12 +57,10 @@
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-
                     <div class="input-box">
                         <label for="confirmPassword">Confirme sua Senha</label>
                         <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
                     </div>
-
                 </div>
 
                 <div class="gender-inputs">
@@ -66,33 +70,56 @@
 
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
+                            <input id="female" type="radio" name="gender" value="Feminino" required>
                             <label for="female">Feminino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
+                            <input id="male" type="radio" name="gender" value="Masculino" required>
                             <label for="male">Masculino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
+                            <input id="others" type="radio" name="gender" value="Outros" required>
                             <label for="others">Outros</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
+                            <input id="none" type="radio" name="gender" value="Prefiro não dizer" required>
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
+                    <button type="submit">Continuar</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Enviar os dados usando EmailJS
+            emailjs.send('seu-service-id', 'seu-template-id', data)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Cadastro enviado com sucesso!');
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    alert('Erro ao enviar o cadastro.');
+                });
+        });
+    </script>
 </body>
 
 </html>
